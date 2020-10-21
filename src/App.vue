@@ -1,28 +1,65 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="root">
+    <div class="app-banner">
+        <div class="inline-flex">
+          <span>
+            Powered by
+            <a href="https://slash.dgraph.io" target="__blank">
+              <strong>Slash GraphQL</strong>
+            </a>
+          </span>
+          <sui-image size="mini" src="/lighting.svg" class="lightning-logo" />
+        </div>
+      </div>
+      <div class="App">
+        <Header />
+        <router-view/>
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from '@/components/Header'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { Header }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  background-clip: content-box;
+}
+
+.app-banner {
+  padding: 5px;
+  height: 30px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: larger;
+  background-color: #eaeaea;
+}
+
+.slash-img {
+  height: 25px;
+}
+
+.header-text {
+  background: -webkit-linear-gradient(#ff1800, #ff009b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0px;
+  font-size: x-large;
+}
+
+.t-size {
+  font-size: smaller;
+}
+
+.layout-margin {
+  margin: 2.5rem 7rem 7rem 7rem;
+}
+
+.tags-field {
+  width: 41%;
 }
 </style>
