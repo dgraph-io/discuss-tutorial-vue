@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="root">
+    <div class="app-banner">
+      <div class="inline-flex">
+        <span>
+          Powered by
+          <a href="https://slash.dgraph.io" target="__blank">
+            <strong>Slash GraphQL</strong>
+          </a>
+        </span>
+        <sui-image size="mini" src="/lighting.svg" class="lightning-logo" />
+      </div>
+    </div>
+    <div class="App">
+      <Header />
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/Header"
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
