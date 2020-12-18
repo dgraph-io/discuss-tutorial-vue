@@ -1,0 +1,38 @@
+query getPost($id: ID!) {
+  getPost(id: $id) {
+    id
+    title
+    text
+    tags
+    datePublished
+    category {
+      id
+      name
+    }
+    author {
+      username
+      displayName
+      avatarImg
+    }
+    comments {
+      id
+      text
+      commentsOn {
+        comments {
+          id
+          text
+          author {
+            username
+            displayName
+            avatarImg
+          }
+        }
+      }
+      author {
+        username
+        displayName
+        avatarImg
+      }
+    }
+  }
+}
