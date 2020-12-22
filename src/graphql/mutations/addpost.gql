@@ -1,0 +1,23 @@
+mutation addPost($post: AddPostInput!) {
+  addPost(input: [$post]) {
+    post {
+      id
+      title
+      text
+      tags
+      datePublished
+      category {
+          id
+          name
+      }
+      author {
+          username
+          displayName
+          avatarImg
+      }
+      commentsAggregate {
+          count
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    queryCategory {
+        id
+        name
+    }
+}

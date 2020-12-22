@@ -2,7 +2,8 @@
   <div class="ui clearing segment header-seg">
     <h3 class="ui right floated header header-seg-right">
       <span>
-        <sui-button class="dgraph-btn">Log In</sui-button>
+        <sui-button class="dgraph-btn" @click="showCreateModal = true">Create Post</sui-button>
+        
       </span>
     </h3>
     <h3 class="ui left floated header header-seg-left">
@@ -18,15 +19,20 @@
         </div>
       </router-link>
     </h3>
+    <CreatePostModal v-model="showCreateModal" />
   </div>
 </template>
 
 <script>
-export default {
+import CreatePostModal from './CreatePostModal'
 
+export default {
+  components: { CreatePostModal },
+
+  data() {
+    return {
+      showCreateModal: false
+    }
+  } 
 }
 </script>
-
-<style>
-
-</style>
